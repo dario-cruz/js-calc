@@ -2,11 +2,36 @@
     box-sizing: border-box;
     border: solid black 2px;
 }
+.titlebox {
+    width: 400px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titlebox h1 {
+    text-align: center;
+    
+}
 
 .calcbox {
-    /* display: flex; */
+    display: grid;
     margin-left: auto;
     margin-right: auto;
     width: 400px;
     height: 700px;
+    grid-template-columns: 1;
+    grid-template-rows: 8;
 }
+
+.compuview {
+    grid-row: 1 / 2;
+}
+
+.buttonbox {
+    grid-row: 2 / 8;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
