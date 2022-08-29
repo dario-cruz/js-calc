@@ -26,6 +26,7 @@
 
 .compuview {
     grid-row: 1 / 2;
+    text-align: end;
 }
 
 .buttonbox {
