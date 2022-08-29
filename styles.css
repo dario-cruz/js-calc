@@ -34,4 +34,83 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
 }
+/* Calc button positioning */
+#equal {
+    grid-row: 5;
+    grid-column: 4;
+}
 
+#addition {
+    grid-row: 4;
+    grid-column: 4;
+}
+
+#subtract {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+#multiply {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+#divide {
+    grid-row: 1;
+    grid-column: 4;
+}
+
+#zero {
+    grid-row: 5;
+    grid-column: 1/4;
+}
+
+#one {
+    grid-row: 4;
+    grid-column: 1;
+}
+
+#two {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+#three {
+    grid-row: 4;
+    grid-column: 3;
+}
+
+#four {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#five {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+#six {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+#seven {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+#eight {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#nine {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+#C {
+    grid-row: 1;
+    grid-column: 1/4;
+}
