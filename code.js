@@ -44,3 +44,20 @@ multiplyButton.addEventListener("click", () => addText("*"));
 divideButton.addEventListener("click", () => addText("/"));
 additionButton.addEventListener("click", () => addText("+"));
 subtractButton.addEventListener("click", () => addText("-"));
+equalButton.addEventListener("click", () => processComputation());
+
+
+//String parsing into array for evaluation. 
+function processComputation() {
+    let evalArray = compuView.innerText.split('');
+    switch (evalArray[1]) {
+        case "+":
+            compuView.innerHTML = evalArray[0] + evalArray[2];
+        case "-":
+            compuView.innerHTML = evalArray[0] - evalArray[2];
+        case "*":
+            compuView.innerHTML = evalArray[0] * evalArray[2];
+        case "/":
+            compuView.innerHTML = evalArray[0] / evalArray[2];
+    }
+}
