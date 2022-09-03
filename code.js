@@ -21,10 +21,10 @@ const zeroButton = document.getElementById("zero")
 const compuView = document.getElementById("compuview")
 
 function addText(text) {
-    compuView.innerHTML += text;
+    compuView.innerText += text;
 }
 function clearText() {
-    compuView.innerHTML = "";
+    compuView.innerText = "";
 }
 
 zeroButton.addEventListener("click", () => addText("0"));
@@ -44,20 +44,25 @@ multiplyButton.addEventListener("click", () => addText("*"));
 divideButton.addEventListener("click", () => addText("/"));
 additionButton.addEventListener("click", () => addText("+"));
 subtractButton.addEventListener("click", () => addText("-"));
+
 equalButton.addEventListener("click", () => processComputation());
 
 
 //String parsing into array for evaluation. 
 function processComputation() {
     let evalArray = compuView.innerText.split('');
+    console.log(evalArray)
+    console.log(Number(evalArray[0]) + Number(evalArray[2]))
     switch (evalArray[1]) {
         case "+":
-            compuView.innerHTML = Number(evalArray[0]) + Number(evalArray[2]);
+            let evalResult = Number(evalArray[0]) + Number(evalArray[2]);
+            compuView.innerText = String(evalResult);
         case "-":
-            compuView.innerHTML = Number(evalArray[0]) - Number(evalArray[2]);
+            compuView.innerText = Number(evalArray[0]) - Number(evalArray[2]);
         case "*":
-            compuView.innerHTML = Number(evalArray[0]) * Number(evalArray[2]);
+            compuView.innerText = Number(evalArray[0]) * Number(evalArray[2]);
         case "/":
-            compuView.innerHTML = Number(evalArray[0]) / Number(evalArray[2]);
+            compuView.innerText = Number(evalArray[0]) / Number(evalArray[2]);
     }
 }
+
