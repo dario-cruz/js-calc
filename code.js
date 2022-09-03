@@ -52,12 +52,12 @@ function processComputation() {
     let evalArray = compuView.innerText.split('');
     switch (evalArray[1]) {
         case "+":
-            compuView.innerHTML = evalArray[0] + evalArray[2];
+            compuView.innerHTML = Number(evalArray[0]) + Number(evalArray[2]);
         case "-":
-            compuView.innerHTML = evalArray[0] - evalArray[2];
+            compuView.innerHTML = Number(evalArray[0]) - Number(evalArray[2]);
         case "*":
-            compuView.innerHTML = evalArray[0] * evalArray[2];
+            compuView.innerHTML = Number(evalArray[0]) * Number(evalArray[2]);
         case "/":
-            compuView.innerHTML = evalArray[0] / evalArray[2];
+            compuView.innerHTML = Number(evalArray[0]) / Number(evalArray[2]);
     }
 }
