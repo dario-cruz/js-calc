@@ -51,11 +51,13 @@ equalButton.addEventListener("click", () => processComputation());
 //String parsing into array for evaluation. 
 function processComputation() {
     let evalArray = compuView.innerText.split('');
-    console.log(evalArray)
-    console.log(Number(evalArray[0]) + Number(evalArray[2]))
+    // console.log(evalArray)
+    // console.log(Number(evalArray[0]) + Number(evalArray[2]))
+    let evalResult
+
     switch (evalArray[1]) {
         case "+":
-            let evalResult = Number(evalArray[0]) + Number(evalArray[2]);
+            evalResult = Number(evalArray[0]) + Number(evalArray[2]);
             compuView.innerText = String(evalResult);
         case "-":
             compuView.innerText = Number(evalArray[0]) - Number(evalArray[2]);
