@@ -15,18 +15,11 @@ const sevenButton = document.getElementById("seven")
 const eightButton = document.getElementById("eight")
 const nineButton = document.getElementById("nine")
 const zeroButton = document.getElementById("zero")
-// compuView.innerHTML = " "
 
 // Number window on calc 
 const compuView = document.getElementById("compuview")
 
-function addText(text) {
-    compuView.innerText += text;
-}
-function clearText() {
-    compuView.innerText = "";
-}
-
+// Eventlistners for buttons
 zeroButton.addEventListener("click", () => addText("0"));
 oneButton.addEventListener("click", () => addText("1"));
 twoButton.addEventListener("click", () => addText("2"));
@@ -47,6 +40,13 @@ subtractButton.addEventListener("click", () => addText("-"));
 
 equalButton.addEventListener("click", () => processComputation());
 
+// Add text to dom on button press.
+function addText(text) {
+    compuView.innerText += text;
+}
+function clearText() {
+    compuView.innerText = "";
+}
 
 //String parsing into array for evaluation. 
 function processComputation() {
