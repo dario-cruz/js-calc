@@ -18,34 +18,58 @@ const zeroButton = document.getElementById("zero")
 
 // Number window on calc 
 const compuView = document.getElementById("compuview")
+const resultView = document.getElementById("resultview")
+const inputView = document.getElementById("inputview")
 
 // Eventlistners for buttons
-zeroButton.addEventListener("click", () => addText("0"));
-oneButton.addEventListener("click", () => addText("1"));
-twoButton.addEventListener("click", () => addText("2"));
-threeButton.addEventListener("click", () => addText("3"));
-fourButton.addEventListener("click", () => addText("4"));
-fiveButton.addEventListener("click", () => addText("5"));
-sixButton.addEventListener("click", () => addText("6"));
-sevenButton.addEventListener("click", () => addText("7"));
-eightButton.addEventListener("click", () => addText("8"));
-nineButton.addEventListener("click", () => addText("9"));
+zeroButton.addEventListener("click", () => addValues("0"));
+oneButton.addEventListener("click", () => addValues("1"));
+twoButton.addEventListener("click", () => addValues("2"));
+threeButton.addEventListener("click", () => addValues("3"));
+fourButton.addEventListener("click", () => addValues("4"));
+fiveButton.addEventListener("click", () => addValues("5"));
+sixButton.addEventListener("click", () => addValues("6"));
+sevenButton.addEventListener("click", () => addValues("7"));
+eightButton.addEventListener("click", () => addValues("8"));
+nineButton.addEventListener("click", () => addValues("9"));
 
 clearButton.addEventListener("click", () => clearText());
 
-multiplyButton.addEventListener("click", () => addText("*"));
-divideButton.addEventListener("click", () => addText("/"));
-additionButton.addEventListener("click", () => addText("+"));
-subtractButton.addEventListener("click", () => addText("-"));
+multiplyButton.addEventListener("click", () => addOperator("*"));
+divideButton.addEventListener("click", () => addOperator("/"));
+additionButton.addEventListener("click", () => addOperator("+"));
+subtractButton.addEventListener("click", () => addOperator("-"));
 
-equalButton.addEventListener("click", () => processComputation());
+equalButton.addEventListener("click", () => advComputation());
 
-// Add text to dom on button press.
-function addText(text) {
-    compuView.innerText += text;
+//Computation array. 
+let compuArray = []
+
+// Add Numbers to dom on button press.
+function addValues(text) {
+    inputView.innerText += text;
+    // compuArray.push(Number(text));
 }
+
+//Clear input, addValues to resultView, add numbers and operator to array. 
+function addOperator(input) {
+    //add value in element to compuArray.
+    compuArray.push(Number(inputView.innerText));
+    compuArray.push(input);
+    //add value to result dom element.
+    let inputText = document.createTextNode(inputView.innerText + " ");
+    let inputOperator = document.createTextNode(input + " ");
+    resultView.appendChild(inputText);
+    resultView.appendChild(inputOperator);
+    //Clear input dom element.
+    inputView.innerText = "";
+}
+
+//Clear text on button press.
 function clearText() {
-    compuView.innerText = "";
+    inputView.innerText = "";
+    resultView.innerText = "";
+    compuArray = [];
 }
 
 //String parsing into array for evaluation. 
@@ -68,3 +92,10 @@ function processComputation() {
     }
 }
 
+function advComputation() {
+    compuArray.push(Number(inputView.innerText));
+    let inputText = document.createTextNode(inputView.innerText + " ");
+    resultView.appendChild(inputText);
+    inputView.innerText = "";
+
+}
