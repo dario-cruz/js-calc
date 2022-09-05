@@ -98,4 +98,15 @@ function advComputation() {
     resultView.appendChild(inputText);
     inputView.innerText = "";
 
+    switch (compuArray[1]) {
+        case "+":
+            return resultView.innerText = compuArray[0] + compuArray[2];
+        case "-":
+            return resultView.innerText = compuArray[0] - compuArray[2];
+        case "*":
+            return resultView.innerText = compuArray[0] * compuArray[2];
+        case "/":
+            return resultView.innerText = compuArray[0] / compuArray[2];
+              
+    }
 }
