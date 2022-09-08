@@ -1,7 +1,21 @@
 * {
     box-sizing: border-box;
-    border: solid black 2px;
+    /* border: solid black 2px; */
 }
+
+/* Custom CSS Properties */
+html {
+    /* Color Pallet */
+    --color-one: #0A1931;
+    --color-two: #185ADB;
+    --color-three: #FFC947;
+    --color-four: #EFEFEF;
+}
+
+body {
+    background-color: var(--color-one);
+}
+
 .titlebox {
     width: 400px;
     height: 70px;
@@ -11,7 +25,7 @@
 
 .titlebox h1 {
     text-align: center;
-    
+    color: var(--color-four);
 }
 
 .calcbox {
@@ -22,6 +36,9 @@
     height: 700px;
     grid-template-columns: 1;
     grid-template-rows: 8;
+    background-color: var(--color-three);
+    padding: 40px;
+    border-radius: 5px;
 }
 
 .compuview {
