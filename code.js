@@ -1,5 +1,6 @@
 // Defining all buttons
 const clearButton = document.getElementById("C")
+const bspaceButton = document.getElementById("bspace")
 const divideButton = document.getElementById("divide")
 const multiplyButton = document.getElementById("multiply")
 const subtractButton = document.getElementById("subtract")
@@ -34,6 +35,7 @@ eightButton.addEventListener("click", () => addValues("8"));
 nineButton.addEventListener("click", () => addValues("9"));
 
 clearButton.addEventListener("click", () => clearText());
+bspaceButton.addEventListener("click", () => );
 
 multiplyButton.addEventListener("click", () => addOperator("*"));
 divideButton.addEventListener("click", () => addOperator("/"));
