@@ -85,22 +85,24 @@ function advComputation() {
     resultView.appendChild(inputText);
     inputView.innerText = "";
     let calResult = ""
-    switch (compuArray[1]) {
-        case "+":
-            calResult = resultView.innerText = compuArray[0] + compuArray[2];
-            compuArray = [calResult];
-            return calResult;
-        case "-":
-            calResult = resultView.innerText = compuArray[0] - compuArray[2];
-            compuArray = [calResult];
-            return calResult;
-        case "*":
-            calResult = resultView.innerText = compuArray[0] * compuArray[2];
-            compuArray = [calResult];
-            return calResult;
-        case "/":
-            calResult = resultView.innerText = compuArray[0] / compuArray[2];
-            compuArray = [calResult];
-            return calResult;
+    if (compuArray[1] !== "") {
+        switch (compuArray[1]) {
+            case "+":
+                calResult = resultView.innerText = compuArray[0] + compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+            case "-":
+                calResult = resultView.innerText = compuArray[0] - compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+            case "*":
+                calResult = resultView.innerText = compuArray[0] * compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+            case "/":
+                calResult = resultView.innerText = compuArray[0] / compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+        }
     }
 }
