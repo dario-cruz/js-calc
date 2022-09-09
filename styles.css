@@ -36,6 +36,7 @@
     grid-template-rows: repeat(5, 1fr);
 }
 /* Calc button positioning */
+
 #equal {
     grid-row: 5;
     grid-column: 4;
@@ -113,5 +114,10 @@
 
 #C {
     grid-row: 1;
-    grid-column: 1/4;
+    grid-column: 1/3;
+}
+
+#bspace {
+    grid-row: 1;
+    grid-column: 3/4;
 }
