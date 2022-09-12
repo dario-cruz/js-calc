@@ -52,6 +52,7 @@ let calcHappened = false
 
 // Add Numbers to dom on button press.
 function addValues(text) {
+    //logic for number input without expression. 
     if (calcHappened == true && compuArray[1] == undefined) {
         compuArray = [];
         resultView.innerText = "";
@@ -124,3 +125,64 @@ function advComputation() {
         }
     }
 }
+
+// Keyboard support. 
+document.addEventListener("keyup", (event) => {
+    switch(event.key) {
+        //Number events
+        case "1":
+            addValues(1);
+            break;
+        case "2":
+            addValues(2);
+            break;
+        case "3":
+            addValues(3);
+            break;
+        case "4":
+            addValues(4);
+            break;
+        case "5":
+            addValues(5);
+            break;
+        case "6":
+            addValues(6);
+            break;
+        case "7":
+            addValues(7);
+            break;
+        case "8":
+            addValues(8);
+            break;
+        case "9":
+            addValues(9);
+            break;
+        case "0":
+            addValues(0);
+            break;
+        //Operation events
+        case "-":
+            addOperator("-");
+            break;
+        case "+":
+            addOperator("+");
+            break;
+        case "*":
+            addOperator("*");
+            break;
+        case "/":
+            addOperator("/");
+            break;
+        //Equals and clear
+        case "Enter":
+            advComputation();
+            break;
+        case "Backspace":
+            removeValues();
+            break;
+        case "c":
+            clearText();
+            break;
+    }
+
+})
