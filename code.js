@@ -35,7 +35,7 @@ eightButton.addEventListener("click", () => addValues("8"));
 nineButton.addEventListener("click", () => addValues("9"));
 
 clearButton.addEventListener("click", () => clearText());
-bspaceButton.addEventListener("click", () => );
+bspaceButton.addEventListener("click", () => removeValues());
 
 multiplyButton.addEventListener("click", () => addOperator("*"));
 divideButton.addEventListener("click", () => addOperator("/"));
@@ -52,6 +52,12 @@ function addValues(text) {
     inputView.innerText += text;
     // compuArray.push(Number(text));
 }
+
+//backspace functionality
+function removeValues() {
+    inputView.innerText = inputView.innerText.slice(0,-1);
+}
+
 
 //Clear input, addValues to resultView, add numbers and operator to array. 
 function addOperator(input) {
