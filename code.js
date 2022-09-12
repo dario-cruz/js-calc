@@ -47,8 +47,16 @@ equalButton.addEventListener("click", () => advComputation());
 //Computation array. 
 let compuArray = []
 
+// Indicator of calculation.
+let calcHappened = false
+
 // Add Numbers to dom on button press.
 function addValues(text) {
+    if (calcHappened == true && compuArray[1] == undefined) {
+        compuArray = [];
+        resultView.innerText = "";
+    }
+    calcHappened = false
     inputView.innerText += text;
     // compuArray.push(Number(text));
 }
@@ -80,11 +88,13 @@ function clearText() {
     inputView.innerText = "";
     resultView.innerText = "";
     compuArray = [];
+    calcHappened = false;
 }
 
                 
 //String parsing into array for evaluation. 
 function advComputation() {
+    calcHappened = true;
     if (inputView.innerText !== "") {
         compuArray.push(Number(inputView.innerText));
     }
