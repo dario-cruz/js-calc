@@ -1,5 +1,6 @@
 // Defining all buttons
 const clearButton = document.getElementById("C")
+const bspaceButton = document.getElementById("bspace")
 const divideButton = document.getElementById("divide")
 const multiplyButton = document.getElementById("multiply")
 const subtractButton = document.getElementById("subtract")
@@ -34,6 +35,7 @@ eightButton.addEventListener("click", () => addValues("8"));
 nineButton.addEventListener("click", () => addValues("9"));
 
 clearButton.addEventListener("click", () => clearText());
+bspaceButton.addEventListener("click", () => );
 
 multiplyButton.addEventListener("click", () => addOperator("*"));
 divideButton.addEventListener("click", () => addOperator("/"));
@@ -54,7 +56,9 @@ function addValues(text) {
 //Clear input, addValues to resultView, add numbers and operator to array. 
 function addOperator(input) {
     //add value in element to compuArray.
-    compuArray.push(Number(inputView.innerText));
+    if (inputView.innerText !== "") {
+        compuArray.push(Number(inputView.innerText));
+    }
     compuArray.push(input);
     //add value to result dom element.
     let inputText = document.createTextNode(inputView.innerText + " ");
@@ -72,41 +76,35 @@ function clearText() {
     compuArray = [];
 }
 
+                
 //String parsing into array for evaluation. 
-function processComputation() {
-    let evalArray = compuView.innerText.split('');
-    // console.log(evalArray)
-    // console.log(Number(evalArray[0]) + Number(evalArray[2]))
-    let evalResult
-
-    switch (evalArray[1]) {
-        case "+":
-            evalResult = Number(evalArray[0]) + Number(evalArray[2]);
-            compuView.innerText = String(evalResult);
-        case "-":
-            compuView.innerText = Number(evalArray[0]) - Number(evalArray[2]);
-        case "*":
-            compuView.innerText = Number(evalArray[0]) * Number(evalArray[2]);
-        case "/":
-            compuView.innerText = Number(evalArray[0]) / Number(evalArray[2]);
-    }
-}
-
 function advComputation() {
-    compuArray.push(Number(inputView.innerText));
+    if (inputView.innerText !== "") {
+        compuArray.push(Number(inputView.innerText));
+    }
+
     let inputText = document.createTextNode(inputView.innerText + " ");
     resultView.appendChild(inputText);
     inputView.innerText = "";
-
-    switch (compuArray[1]) {
-        case "+":
-            return resultView.innerText = compuArray[0] + compuArray[2];
-        case "-":
-            return resultView.innerText = compuArray[0] - compuArray[2];
-        case "*":
-            return resultView.innerText = compuArray[0] * compuArray[2];
-        case "/":
-            return resultView.innerText = compuArray[0] / compuArray[2];
-              
+    let calResult = ""
+    if (compuArray[1] !== "") {
+        switch (compuArray[1]) {
+            case "+":
+                calResult = resultView.innerText = compuArray[0] + compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+            case "-":
+                calResult = resultView.innerText = compuArray[0] - compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+            case "*":
+                calResult = resultView.innerText = compuArray[0] * compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+            case "/":
+                calResult = resultView.innerText = compuArray[0] / compuArray[2];
+                compuArray = [calResult];
+                return calResult;
+        }
     }
 }
