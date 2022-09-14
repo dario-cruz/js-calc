@@ -1,6 +1,15 @@
 * {
     box-sizing: border-box;
-    border: solid black 2px;
+    /* border: solid black 2px; */
+}
+
+/* Setting custom css props for styling. */
+body {
+    --background-color: #E8EDDF;
+    --main-gui: #333533;
+    --secondary-gui: #242423;
+    --button-highlight: #FCA311;
+    --dark-tone: #242423;
 }
 .titlebox {
     width: 400px;
