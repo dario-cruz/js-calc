@@ -5,11 +5,11 @@
 
 /* Setting custom css props for styling. */
 body {
-    --background-color: #E8EDDF;
-    --main-gui: #333533;
-    --secondary-gui: #242423;
-    --button-highlight: #FCA311;
-    --gui-highlight: #CFDBD5;
+    --background-color: #000814;
+    --main-gui: #001d3d;
+    --secondary-gui: #003566;
+    --button-highlight: #ffc300;
+    --gui-highlight: #ffd60a;
     background-color: var(--background-color);
 }
 .titlebox {
@@ -17,6 +17,8 @@ body {
     height: 70px;
     margin-left: auto;
     margin-right: auto;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .titlebox h1 {
@@ -25,11 +27,14 @@ body {
 }
 
 .calcbox {
-    display: grid;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     width: 500px;
-    height: 700px;
+    /* height: 700px; */
     grid-template-columns: 1;
     grid-template-rows: 8;
     background-color: var(--main-gui);
@@ -37,6 +42,18 @@ body {
     font-size: large;
     font-weight: bolder;
     border: solid var(--gui-highlight) 4px;
+}
+
+#resultview {
+    border-bottom: solid var(--gui-highlight);
+    height: 30px;
+    width: 400px;
+    margin-bottom: -5px;
+}
+#inputview {
+    border-top: solid var(--gui-highlight);
+    height: 30px;
+    width: 400px;
 }
 
 .calcbox button {
@@ -48,17 +65,16 @@ body {
 }
 
 .compuview {
-    grid-row: 1 / 2;
     text-align: end;
     color: var(--gui-highlight);
-    height: 40px;
+    /* height: 40px; */
 }
 
 .buttonbox {
-    grid-row: 2 / 8;
     display: grid;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(5, 100px);
+    margin-bottom: 40px;
 }
 /* Calc button positioning */
 
