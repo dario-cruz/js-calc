@@ -19,11 +19,12 @@ body {
     margin-right: auto;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
-.titlebox h1 {
-    text-align: center;
-    
+.titlebox p {
+    margin-top: -30px;
+    font-style: italic;
 }
 
 .calcbox {
